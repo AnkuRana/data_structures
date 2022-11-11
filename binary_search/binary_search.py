@@ -17,22 +17,14 @@ def binary_search(input_array, value):
     length = len(input_array)
     start = 0
     end = length - 1
-    print(f"start < : {start}")
-    print(f"end <: {end}")
     while start <= end:
         mid = math.ceil((start + end) / 2)
         if input_array[mid] == value:
             return mid
         elif input_array[mid] < value:
             start = mid + 1
-            print(f"mid : {mid}")
-            print(f"start < : {start}")
-            print(f"end <: {end}")
         elif input_array[mid] > value:
             end = mid - 1
-            print(f"mid : {mid}")
-            print(f"start : {start}")
-            print(f"end: {end}")
         else:
             return -1
 
