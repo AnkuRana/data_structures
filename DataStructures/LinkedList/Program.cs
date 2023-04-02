@@ -44,13 +44,36 @@ namespace Datastructure
             //Console.WriteLine("Reverse linked list uisng method 3");
             //l1.rev_util();
             //l1.print_list();
-            mergeSort obj = new mergeSort();
+           
+            //mergeSort obj = new mergeSort();
+            QuickSort qk = new QuickSort();
+            BubbleSort bs = new BubbleSort();
+            HelperClass hp = new HelperClass();
             int[] arr = new int[] { 1, 4, 5, 2, 7, 3, 6, 9, 8,4, 32 ,18, 12, 21,19 ,87,65,100, 99 };
+            int[] arr2 = new int[] { 11, 12, 12, 13, 14, 15, 16, 17, };
+            int[] arr3 = new int[] { 80, 6, 1, 4, 2, 4 };
+            
+            // Bubble sort
+            //Console.WriteLine("Before sorting:");
+            //hp.printArray(arr);
+            //bs.bubblesort(arr);
+            //Console.WriteLine("After Sorting:");
+            //hp.printArray(arr);
+
+            //Console.WriteLine("Before sorting arr2:");
+            //hp.printArray(arr2);
+            //bs.bubblesort(arr2);
+            //Console.WriteLine("After Sorting arr2:");
+            //hp.printArray(arr2);
+
+            //Quick sort
             Console.WriteLine("Before sorting:");
-            obj.printArray(arr);
-            obj.msort(arr, 0, arr.Length-1);
+            hp.printArray(arr3);
+            qk.quickSort(arr3,0, arr3.Length-1);
             Console.WriteLine("After Sorting:");
-            obj.printArray(arr);
+            hp.printArray(arr3);
+
+            
         }
 
     }
