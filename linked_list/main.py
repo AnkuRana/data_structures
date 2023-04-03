@@ -7,6 +7,8 @@ print("1. To print the existing linked list.")
 print("2. To add to the end of the linked list.")
 print("3. To add to the beginning of the linked list.")
 print("4. To insert a node at a specified position. Head being at 1st position")
+print("5. Reverse a linked list")
+print("6. Insert at specified index using recursion.")
 print("   press '*' to exit the console.")
 l1 = LinkedList()
 is_true = True
@@ -28,6 +30,13 @@ while is_true:
         new_value = input("Enter value of node you want to add: ").lower()
         position = int(input("Enter position where you want to add node: "))
         l1.insert(position, new_value)
+    elif user_choice == "5":
+        l1.reverse_linked_list()
+        l1.print_linked_list()
+    elif user_choice =="6":
+        new_value = input("Enter value of node you want to add: ").lower()
+        position = int(input("Enter position where you want to add node: "))
+        l1.insertRec(position, new_value)
     elif user_choice == "*":
         t = 3
         while t > 0:
