@@ -15,7 +15,17 @@ class linkedlist:
             return
         else:
             self.insert_node(curr_node.next, value)
-            
+ 
+    def reverseRec(self, node):
+        if node.next is None:
+            return node
+        else:
+            node_returned = self.reverseRec(node.next)
+            node.next.next = node
+            node.next = None
+            return node_returned
+        
+                       
 def print_ll(head):
         if head is None:
             print("Empty linked list.")
@@ -55,6 +65,10 @@ print()
 merge_head = mergeSortedlinkedlists(l1.head, l2.head)
 print("Merged linked list: ", end="")
 print_ll(merge_head)
+print()
+print("Reverse Merged linked list: ", end="")
+new_head = l1.reverseRec(merge_head)
+print_ll(new_head)
 
        
             
