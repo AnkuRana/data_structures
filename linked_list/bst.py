@@ -52,6 +52,21 @@ class BST:
         self.inorder(node.left)
         print(node.value, end=" ")
         self.inorder(node.right)
+        
+    def sumOfTree(self, node):
+        if node is None:
+            return 0
+        left_value = self.sumOfTree(node.left)
+        right_value = self.sumOfTree(node.right)
+        return node.value + left_value + right_value
+    
+    def heightOfTree(self, node):
+        if node is None:
+            return 0
+        left = self.heightOfTree(node.left)
+        right = self.heightOfTree(node.right)
+        return 1 + max(left, right)
+        
     
     def printAllBoundary(self):
         if self.root is None:
@@ -91,12 +106,20 @@ tree.insert(10)
 tree.insert(5)
 tree.insert(9)
 tree.insert(14)
+# tree.root.left = Node(2)
+# tree.root.right = Node(3)
+# tree.root.left.left = Node(4)
+# tree.root.left.right = Node(5)
 
 tree.inorder(tree.root)
 print()
 tree.printAllBoundary()
+print()
+print(f"sum of values in tree: {tree.sumOfTree(tree.root)}")
+print()
+print(f"height of tree: {tree.heightOfTree(tree.root)}")
 # Check search
 # Should be True
-print(tree.search(1))
+# print(tree.search(1))
 # # Should be False
 # print(tree.search(6))
